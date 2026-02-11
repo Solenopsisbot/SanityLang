@@ -983,3 +983,9 @@ pray for nothing.    // No effect. +1 SP for the gesture.
 | `--pray` | Equivalent to `pray for mercy` globally. |
 | `--i-know-what-im-doing` | Required to compile `.insanity` files. |
 | `--target <t>` | Compilation target: `native`, `js`, `python`, `c`, `english`, `haiku`, `therapy`, `cursed` (outputs DreamBerd). |
+
+---
+
+## Appendix C: If You're Struggling
+
+If this is too complicated for you, just go and use brainfuck instead.
