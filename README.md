@@ -61,7 +61,7 @@ SP changes from actions:
 | Canvas SP reaching 0 (see §31) | -10 to program SP |
 | Writing to a file with Angry handle (see §30) | -5 (silent failure) |
 | Using `shout` (see §28) | -2 (aggression tax) |
-| Reading a file >1MB (see §30) | -2 (resource strain) |
+| Reading a file (see §30) | -0.5 per MB (resource strain, rounded up) |
 | Drawing during Visual Insanity Mode (see §31) | -1 per draw call |
 
 SP is checked at compile time AND at runtime. Some things that cost SP at compile time cost double at runtime (specifically: `whatever` declarations, Trust reaching 0, and `curse` declarations).
@@ -1162,7 +1162,7 @@ Returns a List of Words, one per line. List Mood depends on file size:
 - 1000-10000 lines → Tired
 - > 10000 lines → Overwhelmed (see §28)
 
-Reading a file > 1MB costs -2 SP and sets the file handle's Mood to Tired.
+Reading a file costs **-0.5 SP per megabyte** (rounded up). A 500KB file costs -1 SP. A 10MB file costs -5 SP. A 200MB file costs -100 SP (instant Insanity Mode from a single read). Files over 1MB also set the file handle's Mood to Tired.
 
 #### Read Terminator Effects
 
